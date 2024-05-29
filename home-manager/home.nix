@@ -46,17 +46,26 @@
   };
 
   home = {
+    stateVersion = "24.05";
     username = "bryanmoy";
     homeDirectory = "/home/bryanmoy";
     file = {
       ".ssh/allowed_signers".text =
         "* ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPvMq/Zpl7z9G5EOv9lfI7XK+U4SnNSq9PMGU6Kv7SaC";
     };
+    # packages = [
+    #   inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.mise
+    # ];
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  programs.mise.enable = true;
+
+  # ${pkgs.system}.mise.enable = true;
+  # ${pkgs.system}.mise.globalConfig = {
+  #   tools = {
+  #     python = ["3.10"];
+  #   };
+  # };
 
   # Enable home-manager
   programs.home-manager.enable = true;
@@ -156,9 +165,16 @@
   programs.helix.languages = {};
   programs.helix.defaultEditor = true;
 
+  # Wezterm
+  programs.wezterm.enable = true;
+  programs.wezterm.extraConfig = ''
+    return {
+      font = wezterm.font("Firacode Mono"),
+      font_size = 10.0,
+      color_scheme = "Tokyonight",
+    }
+  '';
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
 }
