@@ -53,19 +53,7 @@
       ".ssh/allowed_signers".text =
         "* ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPvMq/Zpl7z9G5EOv9lfI7XK+U4SnNSq9PMGU6Kv7SaC";
     };
-    # packages = [
-    #   inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.mise
-    # ];
   };
-
-  programs.mise.enable = true;
-
-  # ${pkgs.system}.mise.enable = true;
-  # ${pkgs.system}.mise.globalConfig = {
-  #   tools = {
-  #     python = ["3.10"];
-  #   };
-  # };
 
   # Enable home-manager
   programs.home-manager.enable = true;
