@@ -64,6 +64,7 @@
     extraConfig = ''
       Host *
           IdentityAgent ~/.1password/agent.sock
+          AddressFamily inet
     '';
   };
 
