@@ -169,7 +169,7 @@
   programs.wezterm.enable = true;
   programs.wezterm.extraConfig = ''
     return {
-      font = wezterm.font("Firacode Mono"),
+      font = wezterm.font("FiraCode Nerd Font Mono"),
       font_size = 10.0,
       color_scheme = "Tokyonight",
     }
