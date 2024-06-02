@@ -309,6 +309,10 @@
   #  wget
   ];
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
