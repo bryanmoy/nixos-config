@@ -13,6 +13,7 @@
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
     outputs.homeManagerModules.foot
+    outputs.homeManagerModules.hyprland
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -59,34 +60,34 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  # Hyprland
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-      "$mod" = "SUPER";
-      bind =
-        [
-          "$mod, F, exec, firefox"
-          ", Print, exec, grimblast copy area"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
-    };
-  };
+  # # Hyprland
+  # wayland.windowManager.hyprland = {
+  #   enable = true;
+  #   settings = {
+  #     "$mod" = "SUPER";
+  #     bind =
+  #       [
+  #         "$mod, F, exec, firefox"
+  #         ", Print, exec, grimblast copy area"
+  #       ]
+  #       ++ (
+  #         # workspaces
+  #         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+  #         builtins.concatLists (builtins.genList (
+  #             x: let
+  #               ws = let
+  #                 c = (x + 1) / 10;
+  #               in
+  #                 builtins.toString (x + 1 - (c * 10));
+  #             in [
+  #               "$mod, ${ws}, workspace, ${toString (x + 1)}"
+  #               "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+  #             ]
+  #           )
+  #           10)
+  #       );
+  #   };
+  # };
 
   # SSH
   programs.ssh = {
@@ -196,6 +197,7 @@
 
   modules = {
     foot.enable = true;
+    hyprland.enable = true;
   };
 
   # Nicely reload system units when changing configs
