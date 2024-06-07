@@ -14,6 +14,7 @@
     # outputs.homeManagerModules.example
     outputs.homeManagerModules.ssh
     outputs.homeManagerModules.git
+    outputs.homeManagerModules.starship
     outputs.homeManagerModules.foot
     outputs.homeManagerModules.hyprland
 
@@ -61,10 +62,6 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
-
-  # Shell
-  programs.starship.enable = true;
-  programs.starship.settings = {}; # TODO: https://starship.rs/config/
 
   # Zsh
   programs.zsh.enable = true;
@@ -145,6 +142,7 @@
   modules = {
     ssh.enable = true;
     git.enable = true;
+    starship.enable = true;
     foot.enable = true;
     hyprland.enable = true;
   };

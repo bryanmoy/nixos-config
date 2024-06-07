@@ -5,6 +5,7 @@
   # my-module = import ./my-module.nix;
   ssh = import ./ssh/default.nix;
   git = import ./git/default.nix;
+  starship = import ./starship/default.nix;
   foot = import ./foot.nix;
   hyprland = import ./hyprland/default.nix;
 }
