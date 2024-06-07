@@ -12,6 +12,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.homeManagerModules.ssh
     outputs.homeManagerModules.git
     outputs.homeManagerModules.foot
     outputs.homeManagerModules.hyprland
@@ -60,16 +61,6 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
-
-  # SSH
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ~/.1password/agent.sock
-          AddressFamily inet
-    '';
-  };
 
   # Shell
   programs.starship.enable = true;
@@ -152,6 +143,7 @@
   '';
 
   modules = {
+    ssh.enable = true;
     git.enable = true;
     foot.enable = true;
     hyprland.enable = true;

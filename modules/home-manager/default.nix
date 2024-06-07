@@ -3,6 +3,7 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  ssh = import ./ssh/default.nix;
   git = import ./git/default.nix;
   foot = import ./foot.nix;
   hyprland = import ./hyprland/default.nix;
