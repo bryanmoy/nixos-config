@@ -69,16 +69,6 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  # Wezterm
-  programs.wezterm.enable = true;
-  programs.wezterm.extraConfig = ''
-    return {
-      font = wezterm.font("FiraCode Nerd Font Mono"),
-      font_size = 10.0,
-      color_scheme = "Tokyonight",
-    }
-  '';
-
   modules = {
     ssh.enable = true;
     git.enable = true;

@@ -6,11 +6,11 @@ let
   myAliases = import ../../../aliases/default.nix;
 
 in {
-    options.modules.zsh = { enable = mkEnableOption "zsh"; };
-    config = mkIf cfg.enable {
-        programs.zsh = {
-            enable = true;
-            shellAliases = myAliases;
-        };
+  options.modules.zsh = { enable = mkEnableOption "zsh"; };
+  config = mkIf cfg.enable {
+    programs.zsh = {
+      enable = true;
+      shellAliases = myAliases;
     };
+  };
 }
