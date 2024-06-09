@@ -20,6 +20,7 @@
     outputs.homeManagerModules.zsh
     outputs.homeManagerModules.ion
     outputs.homeManagerModules.nushell
+    outputs.homeManagerModules.direnv
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -65,13 +66,6 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
-
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-  };
 
   # Eza
   programs.eza.enable = true;
@@ -131,6 +125,7 @@
     zsh.enable = true;
     ion.enable = true;
     nushell.enable = true;
+    direnv.enable = true;
   };
 
   # Nicely reload system units when changing configs

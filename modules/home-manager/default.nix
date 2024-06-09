@@ -11,4 +11,5 @@
   zsh = import ./zsh/default.nix;
   ion = import ./ion/default.nix;
   nushell = import ./nushell/default.nix;
+  direnv = import ./direnv/default.nix;
 }
