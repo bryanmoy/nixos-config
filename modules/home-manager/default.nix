@@ -13,4 +13,5 @@
   nushell = import ./nushell/default.nix;
   direnv = import ./direnv/default.nix;
   eza = import ./eza/default.nix;
+  helix = import ./helix/default.nix;
 }

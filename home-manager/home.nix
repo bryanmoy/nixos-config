@@ -22,6 +22,7 @@
     outputs.homeManagerModules.nushell
     outputs.homeManagerModules.direnv
     outputs.homeManagerModules.eza
+    outputs.homeManagerModules.helix
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -68,24 +69,6 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  # Helix
-  programs.helix.enable = true;
-  # programs.helix.themes = {};
-  programs.helix.settings = { # https://docs.helix-editor.com/configuration.html
-    theme = "tokyonight";
-    editor = {
-      line-number = "relative";
-      lsp.display-messages = true;
-      cursor-shape = {
-        insert = "bar";
-        normal = "block";
-        select = "underline";
-      };
-    };
-  };
-  programs.helix.languages = {};
-  programs.helix.defaultEditor = true;
-
   # Wezterm
   programs.wezterm.enable = true;
   programs.wezterm.extraConfig = ''
@@ -107,6 +90,7 @@
     nushell.enable = true;
     direnv.enable = true;
     eza.enable = true;
+    helix.enable = true;
   };
 
   # Nicely reload system units when changing configs
