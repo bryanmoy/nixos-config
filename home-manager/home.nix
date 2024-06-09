@@ -21,6 +21,7 @@
     outputs.homeManagerModules.ion
     outputs.homeManagerModules.nushell
     outputs.homeManagerModules.direnv
+    outputs.homeManagerModules.eza
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -67,27 +68,6 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  # Eza
-  programs.eza.enable = true;
-  programs.eza.extraOptions = [
-    # Display options
-    # https://github.com/eza-community/eza#display-options
-    "--long"
-    "--classify=always"
-    
-    # Filtering options
-    # https://github.com/eza-community/eza#filtering-options
-    "--all"
-    "--group-directories-first"
-
-    # Long view options
-    # https://github.com/eza-community/eza#long-view-options
-    "--binary"
-    "--group"
-    "--header"
-    "--time-style=long-iso"
-  ];
-
   # Helix
   programs.helix.enable = true;
   # programs.helix.themes = {};
@@ -126,6 +106,7 @@
     ion.enable = true;
     nushell.enable = true;
     direnv.enable = true;
+    eza.enable = true;
   };
 
   # Nicely reload system units when changing configs
