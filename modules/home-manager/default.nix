@@ -9,4 +9,5 @@
   foot = import ./foot.nix;
   hyprland = import ./hyprland/default.nix;
   zsh = import ./zsh/default.nix;
+  ion = import ./ion/default.nix;
 }

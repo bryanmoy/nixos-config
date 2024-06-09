@@ -18,6 +18,7 @@
     outputs.homeManagerModules.foot
     outputs.homeManagerModules.hyprland
     outputs.homeManagerModules.zsh
+    outputs.homeManagerModules.ion
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -63,13 +64,6 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
-
-  # Ion
-  programs.ion.enable = true;
-  programs.ion.shellAliases = {
-    ls = "eza";
-    ll = "eza";
-  };
 
   # Nushell
   programs.nushell.enable = true;
@@ -140,6 +134,7 @@
     foot.enable = true;
     hyprland.enable = true;
     zsh.enable = true;
+    ion.enable = true;
   };
 
   # Nicely reload system units when changing configs
