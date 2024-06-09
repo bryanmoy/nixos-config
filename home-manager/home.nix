@@ -19,6 +19,7 @@
     outputs.homeManagerModules.hyprland
     outputs.homeManagerModules.zsh
     outputs.homeManagerModules.ion
+    outputs.homeManagerModules.nushell
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -64,12 +65,6 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
-
-  # Nushell
-  programs.nushell.enable = true;
-  programs.nushell.shellAliases = {
-    ll = "ls -al";
-  };
 
   programs = {
     direnv = {
@@ -135,6 +130,7 @@
     hyprland.enable = true;
     zsh.enable = true;
     ion.enable = true;
+    nushell.enable = true;
   };
 
   # Nicely reload system units when changing configs
