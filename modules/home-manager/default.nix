@@ -8,4 +8,5 @@
   starship = import ./starship/default.nix;
   foot = import ./foot.nix;
   hyprland = import ./hyprland/default.nix;
+  zsh = import ./zsh/default.nix;
 }
