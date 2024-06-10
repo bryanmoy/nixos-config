@@ -1,12 +1,14 @@
-{ pkgs, lib, config, ... }:
-
-with lib;
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib; let
   cfg = config.modules.zsh;
   myAliases = import ../../../aliases/default.nix;
-
 in {
-  options.modules.zsh = { enable = mkEnableOption "zsh"; };
+  options.modules.zsh = {enable = mkEnableOption "zsh";};
   config = mkIf cfg.enable {
     programs.zsh = {
       enable = true;

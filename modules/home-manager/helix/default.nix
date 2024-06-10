@@ -1,11 +1,13 @@
-{ pkgs, lib, config, ... }:
-
-with lib;
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib; let
   cfg = config.modules.helix;
-
 in {
-  options.modules.helix = { enable = mkEnableOption "helix"; };
+  options.modules.helix = {enable = mkEnableOption "helix";};
   config = mkIf cfg.enable {
     programs.helix.enable = true;
     programs.helix.settings = {

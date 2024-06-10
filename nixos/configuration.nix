@@ -139,7 +139,7 @@
     bryanmoy = {
       isNormalUser = true;
       description = "Bryan Moy";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
     };
   };
 
@@ -172,12 +172,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
   programs._1password.enable = true;
@@ -185,7 +185,7 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "bryanmoy" ];
+    polkitPolicyOwners = ["bryanmoy"];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
