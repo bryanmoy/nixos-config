@@ -1,0 +1,7 @@
+[[ssh-keys]]
+item = "SSH Key (Qonto)"
+vault = "Qonto"
+
+[[ssh-keys]]
+item = "SSH Key (Qonto NixOS VM)"
+vault = "Bryan"

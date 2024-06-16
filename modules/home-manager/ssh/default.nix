@@ -17,14 +17,7 @@ in {
             AddressFamily inet
       '';
     };
-    home.file.".config/1Password/ssh/agent.toml".text = ''
-      [[ssh-keys]]
-      item = "SSH Key (Qonto)"
-      vault = "Qonto"
-
-      [[ssh-keys]]
-      item = "SSH Key (Qonto NixOS VM)"
-      vault = "Bryan"
-    '';
+    home.file.".ssh/allowed_signers".source = ./allowed_signers;
+    home.file.".config/1Password/ssh/agent.toml".source = ./agent.toml;
   };
 }
