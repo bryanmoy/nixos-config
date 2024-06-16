@@ -31,6 +31,7 @@ in {
         ".direnv/"
         ".coverage"
         "coverage.xml"
+        "venv/"
       ];
       extraConfig = {
         init.defaultBranch = "main";
