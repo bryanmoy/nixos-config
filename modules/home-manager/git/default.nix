@@ -27,6 +27,11 @@ in {
           condition = "gitdir:~/QontoProjects/";
         }
       ];
+      ignores = [
+        ".direnv/"
+        ".coverage"
+        "coverage.xml"
+      ];
       extraConfig = {
         init.defaultBranch = "main";
         commit.gpgsign = true;
