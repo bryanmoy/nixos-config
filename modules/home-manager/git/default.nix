@@ -11,19 +11,21 @@ in {
     enable = mkEnableOption "git";
   };
   config = mkIf cfg.enable {
+    home.file."PersonalProjects/personal.gitconfig".source = ./personal.gitconfig;
+    home.file."QontoProjects/qonto.gitconfig".source = ./qonto.gitconfig;
     programs.git = {
       enable = true;
       includes = [
         {
-          path = "~/.dotfiles/nixos-config/modules/home-manager/git/personal.gitconfig";
+          path = "~/PersonalProjects/personal.gitconfig";
           condition = "gitdir:~/.dotfiles/";
         }
         {
-          path = "~/.dotfiles/nixos-config/modules/home-manager/git/personal.gitconfig";
+          path = "~/PersonalProjects/personal.gitconfig";
           condition = "gitdir:~/PersonalProjects/";
         }
         {
-          path = "~/.dotfiles/nixos-config/modules/home-manager/git/qonto.gitconfig";
+          path = "~/QontoProjects/qonto.gitconfig";
           condition = "gitdir:~/QontoProjects/";
         }
       ];
