@@ -61,7 +61,10 @@
     username = "bryanmoy";
     homeDirectory = "/home/bryanmoy";
     file = {
-      ".ssh/allowed_signers".text = "* ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPvMq/Zpl7z9G5EOv9lfI7XK+U4SnNSq9PMGU6Kv7SaC";
+      ".ssh/allowed_signers".text = ''
+        * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPvMq/Zpl7z9G5EOv9lfI7XK+U4SnNSq9PMGU6Kv7SaC
+        * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPIMS9BLKjX1mGPdGaREThg48e6I5+QbMbzYWV4nHoU
+      '';
     };
   };
 

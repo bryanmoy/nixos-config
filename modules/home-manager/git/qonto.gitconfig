@@ -1,0 +1,7 @@
+[user]
+	name = Bryan Moy
+	email = bryan.moy@qonto.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPIMS9BLKjX1mGPdGaREThg48e6I5+QbMbzYWV4nHoU
+
+[init]
+	defaultBranch = "master"

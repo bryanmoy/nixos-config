@@ -7,15 +7,28 @@
 with lib; let
   cfg = config.modules.git;
 in {
-  options.modules.git = {enable = mkEnableOption "git";};
+  options.modules.git = {
+    enable = mkEnableOption "git";
+  };
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userName = "Bryan Moy";
-      userEmail = "dev@bryanmoy.com";
+      includes = [
+        {
+          path = "~/.dotfiles/nixos-config/modules/home-manager/git/personal.gitconfig";
+          condition = "gitdir:~/.dotfiles/";
+        }
+        {
+          path = "~/.dotfiles/nixos-config/modules/home-manager/git/personal.gitconfig";
+          condition = "gitdir:~/PersonalProjects/";
+        }
+        {
+          path = "~/.dotfiles/nixos-config/modules/home-manager/git/qonto.gitconfig";
+          condition = "gitdir:~/QontoProjects/";
+        }
+      ];
       extraConfig = {
         init.defaultBranch = "main";
-        user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPvMq/Zpl7z9G5EOv9lfI7XK+U4SnNSq9PMGU6Kv7SaC";
         commit.gpgsign = true;
         tag.gpgsign = true;
         gpg.format = "ssh";
