@@ -2,6 +2,7 @@
   ls = "eza";
   ll = "eza";
   nx = "cd ~/.dotfiles/nixos-config/";
+  nd = "nix develop -c $env.SHELL";
   ga = "git add";
   gaa = "git add --all";
   gb = "git branch";
