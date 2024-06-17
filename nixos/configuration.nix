@@ -59,6 +59,10 @@
       flake-registry = "";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
+      trusted-users = [
+        "root"
+        "bryanmoy"
+      ];
     };
     # Opinionated: disable channels
     channel.enable = false;
@@ -172,8 +176,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+    devenv
   ];
 
   fonts.packages = with pkgs; [
