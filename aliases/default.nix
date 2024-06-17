@@ -2,7 +2,8 @@
   ls = "eza";
   ll = "eza";
   nx = "cd ~/.dotfiles/nixos-config/";
-  nd = "nix develop -c $env.SHELL";
+  pp = "cd ~/PersonalProjects";
+  qp = "cd ~/QontoProjects";
   ga = "git add";
   gaa = "git add --all";
   gb = "git branch";
