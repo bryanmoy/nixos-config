@@ -6,6 +6,7 @@
   ssh = import ./ssh/default.nix;
   git = import ./git/default.nix;
   starship = import ./starship/default.nix;
+  alacritty = import ./alacritty/default.nix;
   foot = import ./foot.nix;
   hyprland = import ./hyprland/default.nix;
   waybar = import ./waybar/default.nix;

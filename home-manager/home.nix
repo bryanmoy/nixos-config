@@ -15,6 +15,7 @@
     outputs.homeManagerModules.ssh
     outputs.homeManagerModules.git
     outputs.homeManagerModules.starship
+    outputs.homeManagerModules.alacritty
     outputs.homeManagerModules.foot
     outputs.homeManagerModules.hyprland
     outputs.homeManagerModules.waybar
@@ -66,12 +67,11 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  programs.alacritty.enable = true;
-
   modules = {
     ssh.enable = true;
     git.enable = true;
     starship.enable = true;
+    alacritty.enable = true;
     foot.enable = true;
     hyprland.enable = true;
     waybar.enable = true;
