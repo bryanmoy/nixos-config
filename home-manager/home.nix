@@ -17,6 +17,7 @@
     outputs.homeManagerModules.starship
     outputs.homeManagerModules.foot
     outputs.homeManagerModules.hyprland
+    outputs.homeManagerModules.waybar
     outputs.homeManagerModules.zsh
     outputs.homeManagerModules.ion
     outputs.homeManagerModules.nushell
@@ -65,12 +66,15 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
+  programs.alacritty.enable = true;
+
   modules = {
     ssh.enable = true;
     git.enable = true;
     starship.enable = true;
     foot.enable = true;
     hyprland.enable = true;
+    waybar.enable = true;
     zsh.enable = true;
     ion.enable = true;
     nushell.enable = true;

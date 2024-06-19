@@ -8,6 +8,7 @@
   starship = import ./starship/default.nix;
   foot = import ./foot.nix;
   hyprland = import ./hyprland/default.nix;
+  waybar = import ./waybar/default.nix;
   zsh = import ./zsh/default.nix;
   ion = import ./ion/default.nix;
   nushell = import ./nushell/default.nix;
