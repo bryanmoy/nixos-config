@@ -25,7 +25,21 @@ in {
         };
       };
     };
-    programs.helix.languages = {};
+    programs.helix.languages = {
+      language-server.pylsp.config.pylsp.plugins = {
+        rope_autoimport = {
+          enabled = true;
+          completions.enabled = true;
+          code_actions.enabled = true;
+        };
+      };
+      language = [
+        {
+          name = "python";
+          auto-format = true;
+        }
+      ];
+    };
     programs.helix.defaultEditor = true;
   };
 }

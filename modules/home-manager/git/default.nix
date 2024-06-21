@@ -34,6 +34,7 @@ in {
         ".coverage"
         "coverage.xml"
         "venv/"
+        ".ropeproject/"
       ];
       extraConfig = {
         init.defaultBranch = "main";
