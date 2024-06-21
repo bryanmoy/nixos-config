@@ -29,8 +29,6 @@ in {
       language-server.pylsp.config.pylsp.plugins = {
         rope_autoimport = {
           enabled = true;
-          completions.enabled = true;
-          code_actions.enabled = true;
         };
       };
       language = [
