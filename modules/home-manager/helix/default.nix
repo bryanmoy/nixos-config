@@ -25,9 +25,6 @@ in {
         };
       };
     };
-    programs.helix.themes = {
-      "ui.background" = { fg = "foreground"; };
-    };
     programs.helix.languages = {};
     programs.helix.defaultEditor = true;
   };
