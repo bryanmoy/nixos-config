@@ -20,7 +20,8 @@ in {
         # See https://wiki.hyprland.org/Configuring/Monitors/
 
         monitor = [
-          ",preferred,auto,1.2"
+          # ",preferred,auto,1.333333"
+          ",preferred,auto,1.5"
         ];
 
         ###################
@@ -138,15 +139,11 @@ in {
 
         # https://wiki.hyprland.org/Configuring/Variables/#input
         input = {
-          kb_layout = "us";
-          # kb_variant =
-          # kb_model =
-          # kb_options =
-          # kb_rules =
+          sensitivity = -0.5;
+          natural_scroll = true;
           follow_mouse = 1;
-          sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
           touchpad = {
-            natural_scroll = false;
+            natural_scroll = true;
           };
         };
         
