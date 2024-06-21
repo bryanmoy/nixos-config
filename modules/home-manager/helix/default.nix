@@ -14,13 +14,19 @@ in {
       theme = "tokyonight";
       editor = {
         line-number = "relative";
-        lsp.display-messages = true;
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+        };
         cursor-shape = {
           insert = "bar";
           normal = "block";
           select = "underline";
         };
       };
+    };
+    programs.helix.themes = {
+      "ui.background" = { fg = "foreground"; };
     };
     programs.helix.languages = {};
     programs.helix.defaultEditor = true;
