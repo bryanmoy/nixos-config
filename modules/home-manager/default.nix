@@ -3,17 +3,19 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
-  ssh = import ./ssh/default.nix;
-  git = import ./git/default.nix;
-  starship = import ./starship/default.nix;
   alacritty = import ./alacritty/default.nix;
-  foot = import ./foot.nix;
-  hyprland = import ./hyprland/default.nix;
-  waybar = import ./waybar/default.nix;
-  zsh = import ./zsh/default.nix;
-  ion = import ./ion/default.nix;
-  nushell = import ./nushell/default.nix;
   direnv = import ./direnv/default.nix;
   eza = import ./eza/default.nix;
+  foot = import ./foot.nix;
+  git = import ./git/default.nix;
   helix = import ./helix/default.nix;
+  hyprland = import ./hyprland/default.nix;
+  hyprpaper = import ./hyprpaper/default.nix;
+  ion = import ./ion/default.nix;
+  nushell = import ./nushell/default.nix;
+  ssh = import ./ssh/default.nix;
+  starship = import ./starship/default.nix;
+  waybar = import ./waybar/default.nix;
+  wofi = import ./wofi/default.nix;
+  zsh = import ./zsh/default.nix;
 }

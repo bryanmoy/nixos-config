@@ -12,19 +12,21 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
-    outputs.homeManagerModules.ssh
-    outputs.homeManagerModules.git
-    outputs.homeManagerModules.starship
     outputs.homeManagerModules.alacritty
-    outputs.homeManagerModules.foot
-    outputs.homeManagerModules.hyprland
-    outputs.homeManagerModules.waybar
-    outputs.homeManagerModules.zsh
-    outputs.homeManagerModules.ion
-    outputs.homeManagerModules.nushell
     outputs.homeManagerModules.direnv
     outputs.homeManagerModules.eza
+    outputs.homeManagerModules.foot
+    outputs.homeManagerModules.git
     outputs.homeManagerModules.helix
+    outputs.homeManagerModules.hyprland
+    outputs.homeManagerModules.hyprpaper
+    outputs.homeManagerModules.ion
+    outputs.homeManagerModules.nushell
+    outputs.homeManagerModules.ssh
+    outputs.homeManagerModules.starship
+    outputs.homeManagerModules.waybar
+    outputs.homeManagerModules.wofi
+    outputs.homeManagerModules.zsh
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -68,19 +70,21 @@
   programs.home-manager.enable = true;
 
   modules = {
-    ssh.enable = true;
-    git.enable = true;
-    starship.enable = true;
     alacritty.enable = true;
-    foot.enable = true;
-    hyprland.enable = true;
-    waybar.enable = true;
-    zsh.enable = true;
-    ion.enable = true;
-    nushell.enable = true;
     direnv.enable = true;
     eza.enable = true;
+    foot.enable = true;
+    git.enable = true;
     helix.enable = true;
+    hyprland.enable = true;
+    hyprpaper.enable = true;
+    ion.enable = true;
+    nushell.enable = true;
+    ssh.enable = true;
+    starship.enable = true;
+    waybar.enable = true;
+    wofi.enable = true;
+    zsh.enable = true;
   };
 
   # Nicely reload system units when changing configs

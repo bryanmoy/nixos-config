@@ -30,6 +30,9 @@ in {
         # See https://wiki.hyprland.org/Configuring/Keywords/
 
         "$terminal" = "LIBGL_ALWAYS_SOFTWARE=1 alacritty";
+        "$fileManager" = "yazi";
+        "$menu" = "wofi --show drun";
+        "$w1" = "hyprctl hyprpaper wallpaper \",~/.dotfiles/nixos-config/assets/wallpapers/mountains-lake-water-body-minimal-4k-hz.jpg\"";
 
         #################
         ### AUTOSTART ###
@@ -42,6 +45,7 @@ in {
 
         exec-once = [
           "waybar"
+          "hyprpaper"
           "clipse -listen"
         ];
 
@@ -183,7 +187,7 @@ in {
           "$mainMod, down, movefocus, d"
           # Switch workspaces with mainMod + [0-9]
           "$mainMod, 1, workspace, 1"
-          # bind = $mainMod, 1, exec, $w1
+          "$mainMod, 1, exec, $w1"
           "$mainMod, 2, workspace, 2"
           "$mainMod, 3, workspace, 3"
           "$mainMod, 4, workspace, 4"
@@ -240,13 +244,5 @@ in {
         ];
       };
     };
-    # home.packages = with pkgs; [
-    #   wofi
-    #   swaybg
-    #   wlsunset
-    #   wl-clipboard
-    #   hyprland
-    # ];
-    # home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
   };
 }

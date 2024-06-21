@@ -17,6 +17,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     ...
   } @ inputs: let
@@ -32,6 +33,8 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.aarch64-linux;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -53,7 +56,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       aesthetique-labs = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit pkgs-unstable inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
@@ -66,7 +69,7 @@
     homeConfigurations = {
       "bryanmoy@aesthetique-labs" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {inherit pkgs-unstable inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix

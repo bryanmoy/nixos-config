@@ -6,6 +6,7 @@
   lib,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   # You can import other NixOS modules here
@@ -178,7 +179,10 @@
   environment.systemPackages = with pkgs; [
     clipse
     devenv
-  ];
+    wl-clipboard
+  ] ++ ( with pkgs-unstable; [
+    hyprpaper
+  ]);
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode"];})
