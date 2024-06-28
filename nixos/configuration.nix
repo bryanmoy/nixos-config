@@ -179,9 +179,9 @@
   environment.systemPackages = with pkgs; [
     vivaldi
     clipse
-    devenv
     wl-clipboard
   ] ++ ( with pkgs-unstable; [
+    devenv
     hyprpaper
   ]);
 
