@@ -144,7 +144,7 @@
     bryanmoy = {
       isNormalUser = true;
       description = "Bryan Moy";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
     };
   };
 
@@ -196,6 +196,8 @@
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = ["bryanmoy"];
   };
+
+  virtualisation.docker.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
