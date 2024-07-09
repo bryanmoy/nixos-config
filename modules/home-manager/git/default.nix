@@ -31,6 +31,8 @@ in {
       ];
       ignores = [
         ".direnv/"
+        ".devenv*"
+        "devenv.local.nix"
         ".coverage"
         "coverage.xml"
         "venv/"
