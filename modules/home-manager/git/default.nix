@@ -35,6 +35,8 @@ in {
         "coverage.xml"
         "venv/"
         ".ropeproject/"
+        ".pre-commit-config.yaml"
+        ".pre-commit-config.yaml.bak"
       ];
       extraConfig = {
         init.defaultBranch = "main";
@@ -43,6 +45,7 @@ in {
         gpg.format = "ssh";
         gpg.ssh.program = "op-ssh-sign";
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        push.autoSetupRemote = true;
       };
     };
   };
