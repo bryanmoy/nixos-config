@@ -152,8 +152,8 @@
   # services.spice-webdavd.enable = true;
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "bryanmoy";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "bryanmoy";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -177,9 +177,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vivaldi
+    floorp
     clipse
     wl-clipboard
+    just
   ] ++ ( with pkgs-unstable; [
     devenv
     hyprpaper
