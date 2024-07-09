@@ -23,6 +23,9 @@ in {
           normal = "block";
           select = "underline";
         };
+        file-picker = {
+          hidden = false;
+        };
       };
     };
     programs.helix.languages = {
