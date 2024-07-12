@@ -184,6 +184,7 @@
   ] ++ ( with pkgs-unstable; [
     devenv
     hyprpaper
+    hatch
   ]);
 
   fonts.packages = with pkgs; [
