@@ -9,6 +9,10 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    # Nix Darwin
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +22,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nix-darwin,
     home-manager,
     ...
   } @ inputs: let
@@ -57,6 +62,16 @@
     nixosConfigurations = {
       aesthetique-labs = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit pkgs-unstable inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/configuration.nix
+        ];
+      };
+    };
+
+    # Nix Darwin configuration entrypoint
+    darwinConfigurations = {
+      aesthetique-labs = nix-darwin.lib.darwinSystem {
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
